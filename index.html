@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusNotice - Portal</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Campus<strong>Notice</strong></span>
+        </div>
+        <div class="nav-badge">
+            <i class="fa-solid fa-circle-dot"></i> Live Portal
+        </div>
+    </header>
+
+    <div class="main-container">
+        
+        <!-- Left Column: Admin Form -->
+        <aside class="sidebar">
+            <div class="card form-card">
+                <h2><i class="fa-solid fa-bullhorn"></i> Post New Circular</h2>
+                <form id="noticeForm">
+                    <div class="input-group">
+                        <label for="title">Notice Title</label>
+                        <input type="text" id="title" placeholder="e.g., Mid-Term Exam Schedule" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Events">Events</option>
+                            <option value="Exams">Exams</option>
+                            <option value="General">General</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="description">Notice Description</label>
+                        <textarea id="description" placeholder="Write full details here..." rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i> Publish Notice
+                    </button>
+                </form>
+            </div>
+        </aside>
+
+        <!-- Right Column: Notice Board Feed -->
+        <main class="content-area">
+            <div class="card feed-card">
+                <div class="feed-header">
+                    <h2><i class="fa-solid fa-list-check"></i> Official Circulars</h2>
+                    <div class="filter-box">
+                        <i class="fa-solid fa-filter"></i>
+                        <select id="filterCategory">
+                            <option value="All">All Categories</option>
+                            <option value="Academic">Academic</option>
+                            <option value="Events">Events</option>
+                            <option value="Exams">Exams</option>
+                            <option value="General">General</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Dynamic Notices Container -->
+                <div id="noticeList" class="notice-grid">
+                    <!-- Cards will be injected via JS -->
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
